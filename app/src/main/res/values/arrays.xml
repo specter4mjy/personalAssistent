@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Address">
+        <item>csi</item>
+        <item>library</item>
+        <item>hospital</item>
+        <item>science north</item>
+        <item>science center</item>
+        <item>science south</item>
+        <item>arts history</item>
+        <item>arts cafe</item>
+        <item>first cafe</item>
+    </string-array>
+</resources>

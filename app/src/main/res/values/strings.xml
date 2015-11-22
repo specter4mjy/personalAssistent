@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PersonalAssistant</string>
+    <string name="btn_get_location">GET MY LOCATION</string>
+</resources>
