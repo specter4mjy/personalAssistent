@@ -19,7 +19,7 @@ public class LocationDB {
                                   {53.3082629, -6.2244287},{53.3078109, -6.2243912},
                                   {53.3059438, -6.2225539},{53.3062435, -6.2218163},
                                   {53.3054165, -6.2206254},{53.3530657, -6.2610841}};
-    private static final double THRESHOLD_DIST = 10;//10 meter
+    private static final double THRESHOLD_DIST = 1000;//10 meter
 
 
     LocationDB(){

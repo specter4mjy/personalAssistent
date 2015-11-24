@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PersonalAssistant.iml" filepath="$PROJECT_DIR$/PersonalAssistant.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/personalassistant.iml" filepath="$PROJECT_DIR$/personalassistant.iml" />
     </modules>
   </component>
 </project>
