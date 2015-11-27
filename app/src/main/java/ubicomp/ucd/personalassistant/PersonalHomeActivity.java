@@ -8,7 +8,6 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.telephony.PhoneStateListener;
-import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
@@ -85,13 +84,13 @@ public class PersonalHomeActivity extends Activity {
                     userActivity = "class";
                     blockCall();
                 } else {
-//                    stopBlock();
+                    stopBlock();
                 }
             }
         });
 
         numberToName = new HashMap<>();
-        numberToName.put("12345", "mum");
+        numberToName.put("+353877193744", "Specter");
     }
 
     @Override
@@ -106,6 +105,7 @@ public class PersonalHomeActivity extends Activity {
     }
 
     public void blockCall() {
+        Log.i("receiver", "regiset");
         callBlocker = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -139,12 +139,13 @@ public class PersonalHomeActivity extends Activity {
                                 Log.i("specter", "end call:" + incomingNumber);
                                 telephonyService.endCall();
                                 if (numberToName.get(incomingNumber) != null) {
-                                    SmsManager smsManager = SmsManager.getDefault();
-                                    switch (userActivity) {
-                                        case "class":
-                                            smsManager.sendTextMessage(incomingNumber,null,"Hi "+numberToName.get(incomingNumber)+", I'm having class. I'll call you later.",null,null);
-                                            break;
-                                    }
+//                                    SmsManager smsManager = SmsManager.getDefault();
+//                                    switch (userActivity) {
+//                                        case "class":
+//                                            smsManager.sendTextMessage(incomingNumber,null,"Hi "+numberToName.get(incomingNumber)+", I'm having class. I'll call you later.",null,null);
+//                                            break;
+//                                    }
+                                    Toast.makeText(getApplicationContext(), "Hi " + numberToName.get(incomingNumber) + ", I'm having class. I'll call you later.", Toast.LENGTH_LONG).show();
                                 }
                             } catch (RemoteException e) {
                                 e.printStackTrace();
@@ -163,6 +164,7 @@ public class PersonalHomeActivity extends Activity {
 
     private void stopBlock() {
         unregisterReceiver(callBlocker);
+        Log.i("receiver", "unregist");
         callBlocker = null;
     }
 
